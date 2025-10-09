@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import heroImage from '/images/hero-babouche.jpg';
 
 export const Hero = ({ t }) => {
   return (
@@ -16,6 +17,7 @@ export const Hero = ({ t }) => {
         <p className="mt-6 text-lg text-gray-600 leading-relaxed">{t('heroSubtitle')}</p>
 
         <div className="mt-8 flex flex-wrap gap-4 items-center">
+          
           <Link 
             to="/collection"
             className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-sm hover:shadow-md transition-all"
@@ -54,7 +56,7 @@ export const Hero = ({ t }) => {
         <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
         <div className="relative rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
           <motion.img
-            src="/images/Bannière babouche Marrakech (3).png"
+            src={heroImage} // <-- On utilise la variable importée
             alt="Babouches Royales"
             className="object-contain w-full h-full"
             loading="eager"

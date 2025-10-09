@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 import { useAudio } from '../contexts/AudioContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoImage from '/Babouche-Marrakech.png';
 
 const CONTACT_WHATSAPP = "https://wa.me/221761421653?text=";
 
@@ -34,7 +35,7 @@ export const Header = ({ lang, setLang, t }) => {
     <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-40 border-b border-gray-100">
       <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3 group">
-          <img src="/Babouche-Marrakech.png" alt="Logo Babouche Marrakech" className="w-10 h-10" />
+          <img src={logoImage} alt="Logo Babouche Marrakech" className="w-10 h-10" />
           {/* La </div> a été supprimée d'ici */}
           <div>
             <h1 className="text-lg font-bold text-gray-900 leading-tight">Babouche Marrakech</h1>

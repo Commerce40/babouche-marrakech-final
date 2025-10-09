@@ -1,8 +1,29 @@
+// On importe CHAQUE image utilisée dans le fichier
+import imgJaune1 from '/images/Babouche-Jaune-naturel-1.png';
+import imgJaune2 from '/images/Babouche-Jaune-naturel-2.png';
+import imgJaune3 from '/images/Babouche-Jaune-naturel-3.jpeg';
+
+import imgMercedes1 from '/images/Babouche-Mercedes-1.jpeg';
+import imgMercedes2 from '/images/Babouche-Mercedes-2.jpeg';
+import imgMercedes3 from '/images/Babouche-Mercedes-3.jpeg';
+// Note: on suppose que l'image principale de Mercedes est la même que la première de la galerie
+const imgMercedes = imgMercedes1; 
+
+import imgClassique1 from '/images/Babouche-classique-1.png';
+import imgClassique2 from '/images/Babouche-classique-2.png';
+import imgClassique3 from '/images/Babouche-classique-3.png';
+
+import imgDaim1 from '/images/Babouche en Daim Coupe 1.jpeg';
+import imgDaim2 from '/images/Babouche en Daim Coupe 2.jpeg';
+import imgDaim3 from '/images/Babouche en Daim Coupe 3.jpeg';
+// Note: on suppose que l'image principale de Daim est la même que la première de la galerie
+const imgDaim = imgDaim1;
+
 export const PRODUCTS = [
   {
     id: 1,
     title: { 
-      fr: "Babouche Royal Jaune Naturel", 
+      fr: "Babouche Royal Jaune Naturel", // Correction de la syntaxe ici
       ar: "بابوش ملكي أصفر طبيعي", 
       wo: "Babouche Royal Jaune Naturel" 
     },
@@ -13,11 +34,11 @@ export const PRODUCTS = [
       ar: "بابوش ملكي من جلد طبيعي، تطريز يدوي ونعل معزز.",
       wo: "Babouche ci cuir, broderie yu rafet ak nàll yu rafet.",
     },
-    image: "/images/babouche-royale-1.jpg.png",
+    image: imgJaune1, // On utilise la variable importée
     gallery: [
-      "/images/Babouche-Jaune-naturel-1.png",
-      "/images/Babouche-Jaune-naturel-2.png",
-      "/images/Babouche-Jaune-naturel-3.jpeg",
+      imgJaune1,
+      imgJaune2,
+      imgJaune3,
     ],
     sku: "BM-001",
   },
@@ -35,11 +56,11 @@ export const PRODUCTS = [
       ar: "تصميم 'مرسيدس' الأيقوني بلمسة جديدة. نموذج مطلوب لأسلوبه الفريد وراحته الاستثنائية.",
       wo: "Designu 'Mercedes' bu bees. Model bu ñépp bëgg ngir stileem ak confortam.",
     },
-    image: "/images/babouche-mercedes.png",
+    image: imgMercedes,
     gallery: [
-      "/images/Babouche-Mercedes-1.jpeg",
-      "/images/Babouche-Mercedes-2.jpeg",
-      "/images/Babouche-Mercedes-3.jpeg",
+      imgMercedes1,
+      imgMercedes2,
+      imgMercedes3,
     ],
     sku: "BM-004",
   },
@@ -58,11 +79,11 @@ export const PRODUCTS = [
       ar: "مخمل فاخر وباطن من الجلد، نعل يدوي مرن.",
       wo: "Velours premium, ndoxum cuir ci digg.",
     },
-    image: "/images/Babouche-classique-2.png",
+    image: imgClassique2,
     gallery: [
-      "/images/Babouche-classique-1.png",
-      "/images/Babouche-classique-2.png",
-      "/images/Babouche-classique-3.png",
+      imgClassique1,
+      imgClassique2,
+      imgClassique3,
     ],
     sku: "BM-002",
   },
@@ -79,11 +100,11 @@ export const PRODUCTS = [
       ar: "نعومة جلد الغزال الأصلي، مع تفاصيل خياطة يدوية.",
       wo: "Daim bu neex, ak ñaw bu rafet.",
     },
-    image: "/images/babouche-royale-3.jpg.jpeg",
+    image: imgDaim,
     gallery: [
-      "/images/Babouche en Daim Coupe 1.jpeg",
-      "/images/Babouche en Daim Coupe 2.jpeg",
-      "/images/Babouche en Daim Coupe 3.jpeg",
+      imgDaim1,
+      imgDaim2,
+      imgDaim3,
     ],
     sku: "BM-003",
   },
