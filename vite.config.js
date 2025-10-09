@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Commerce40/', // <-- AJOUTEZ CETTE LIGNE !
+  // La base doit être le nom de votre dépôt, entouré de slashes
+  base: '/babouche-marrakech-final/', 
 })
