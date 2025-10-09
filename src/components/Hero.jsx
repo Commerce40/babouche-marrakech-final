@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import heroImage from '/images/hero-babouche.jpg';
+import heroImage from '/images/Bannière babouche Marrakech (3).png';
 
 export const Hero = ({ t }) => {
   return (
