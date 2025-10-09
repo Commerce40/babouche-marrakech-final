@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook } from 'lucide-react';
+import logoImage from '/Babouche-Marrakech.png';
 
 export const Footer = () => {
   return (
@@ -10,7 +11,7 @@ export const Footer = () => {
           
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/Babouche-Marrakech.png" alt="Logo Babouche Marrakech" className="w-8 h-8" />
+              <img src={logoImage} alt="Logo Babouche Marrakech" className="w-10 h-10" />
               <span className="font-bold text-gray-900">Babouche Marrakech</span>
             </div>
             <p className="text-sm text-gray-500">L'élégance royale du Maroc à vos pieds.</p>
