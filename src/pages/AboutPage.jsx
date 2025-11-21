@@ -22,7 +22,7 @@ const AboutPage = ({ t }) => { // Accepter 't'
     <motion.div initial="initial" animate="in" exit="out" variants={pageVariants}>
       <title>{t('aboutTitle')}</title>
       <div className="relative h-72 bg-gray-900">
-        <img src="artisan-hands (1).jpg" alt="Artisan marocain au travail" className="w-full h-full object-cover opacity-30" />
+        <img src="/images/artisan-hands (1).jpg" alt="Artisan marocain au travail" className="w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.h1 className="text-4xl md:text-5xl font-extrabold text-white text-center drop-shadow-lg" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.5 } }}>
             {t('aboutHeader').split(', ').map((part, i) => <span key={i} className="block">{part}</span>)}
