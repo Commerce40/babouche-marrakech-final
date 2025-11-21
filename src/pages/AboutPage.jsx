@@ -23,7 +23,7 @@ const AboutPage = ({ t }) => {
       
       <div className="relative h-72 bg-gray-900">
         {/* On utilise le nouveau nom d'image simple */}
-        <img src="/images/banniere-histoire.jpg" alt="Artisan marocain au travail" className="w-full h-full object-cover opacity-30" />
+        <img src="/images/banniere-histoire.jpg.jpg" alt="Artisan marocain au travail" className="w-full h-full object-cover opacity-30" />
         
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.h1 className="text-4xl md:text-5xl font-extrabold text-white text-center drop-shadow-lg" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.5 } }}>
