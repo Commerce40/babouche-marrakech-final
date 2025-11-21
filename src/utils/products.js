@@ -72,7 +72,7 @@ export const PRODUCTS = [
       wo: "Babouche Royal Classique" 
     },
     price: 12000,
-    specialOffer: "3 paires = 32 000 FCFA",
+    specialOffer: "3 paires = 30 000 FCFA",
     shippingInfo: "Livraison gratuite sur Dakar",
     description: {
       fr: "Velours premium, intérieur cuir, semelle souple fait main. L'alliance parfaite du confort et de l'élégance au quotidien.",
