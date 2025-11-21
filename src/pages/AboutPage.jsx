@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// On importe les icônes dont on a besoin
 import { Eye, MapPin, Award, Truck, Users } from 'lucide-react';
 
 const pageVariants = {
@@ -9,7 +8,7 @@ const pageVariants = {
   out: { opacity: 0, y: -20 },
 };
 
-const AboutPage = ({ t }) => { // Accepter 't'
+const AboutPage = ({ t }) => {
   const storySteps = [
     { icon: MapPin, title: t('aboutStep1Title'), description: t('aboutStep1Desc') },
     { icon: Eye, title: t('aboutStep2Title'), description: t('aboutStep2Desc') },
@@ -21,14 +20,18 @@ const AboutPage = ({ t }) => { // Accepter 't'
   return (
     <motion.div initial="initial" animate="in" exit="out" variants={pageVariants}>
       <title>{t('aboutTitle')}</title>
+      
       <div className="relative h-72 bg-gray-900">
-        <img src="/images/artisan-hands (1).jpg" alt="Artisan marocain au travail" className="w-full h-full object-cover opacity-30" />
+        {/* On utilise le nouveau nom d'image simple */}
+        <img src="/images/banniere-histoire.jpg" alt="Artisan marocain au travail" className="w-full h-full object-cover opacity-30" />
+        
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.h1 className="text-4xl md:text-5xl font-extrabold text-white text-center drop-shadow-lg" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.5 } }}>
             {t('aboutHeader').split(', ').map((part, i) => <span key={i} className="block">{part}</span>)}
           </motion.h1>
         </div>
       </div>
+      
       <div className="bg-white">
         <div className="max-w-4xl mx-auto px-4 py-20">
           <div className="relative">
@@ -56,4 +59,5 @@ const AboutPage = ({ t }) => { // Accepter 't'
     </motion.div>
   );
 };
+
 export default AboutPage;
