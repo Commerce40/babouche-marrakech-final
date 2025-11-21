@@ -6,7 +6,6 @@ import imgJaune3 from '/images/Babouche-Jaune-naturel-3.jpeg';
 import imgMercedes1 from '/images/Babouche-Mercedes-1.jpeg';
 import imgMercedes2 from '/images/Babouche-Mercedes-2.jpeg';
 import imgMercedes3 from '/images/Babouche-Mercedes-3.jpeg';
-// Note: on suppose que l'image principale de Mercedes est la même que la première de la galerie
 const imgMercedes = imgMercedes1; 
 
 import imgClassique1 from '/images/Babouche-classique-1.png';
@@ -16,14 +15,13 @@ import imgClassique3 from '/images/Babouche-classique-3.png';
 import imgDaim1 from '/images/Babouche en Daim Coupe 1.jpeg';
 import imgDaim2 from '/images/Babouche en Daim Coupe 2.jpeg';
 import imgDaim3 from '/images/Babouche en Daim Coupe 3.jpeg';
-// Note: on suppose que l'image principale de Daim est la même que la première de la galerie
 const imgDaim = imgDaim1;
 
 export const PRODUCTS = [
   {
     id: 1,
     title: { 
-      fr: "Babouche Royal Jaune Naturel", // Correction de la syntaxe ici
+      fr: "Babouche Royal Jaune Naturel",
       ar: "بابوش ملكي أصفر طبيعي", 
       wo: "Babouche Royal Jaune Naturel" 
     },
@@ -34,7 +32,7 @@ export const PRODUCTS = [
       ar: "بابوش ملكي من جلد طبيعي، تطريز يدوي ونعل معزز.",
       wo: "Babouche ci cuir, broderie yu rafet ak nàll yu rafet.",
     },
-    image: imgJaune1, // On utilise la variable importée
+    image: imgJaune1,
     gallery: [
       imgJaune1,
       imgJaune2,
@@ -72,8 +70,11 @@ export const PRODUCTS = [
       wo: "Babouche Royal Classique" 
     },
     price: 12000,
-    specialOffer: "3 paires = 32 000 FCFA",
+    // --- MODIFICATION ICI ---
+    specialOffer: "3 paires = 30 000 FCFA", // Au lieu de 32 000
+    // La livraison gratuite est déjà là, c'est parfait
     shippingInfo: "Livraison gratuite sur Dakar",
+    // --- FIN DE LA MODIFICATION ---
     description: {
       fr: "Velours premium, intérieur cuir, semelle souple fait main. L'alliance parfaite du confort et de l'élégance au quotidien.",
       ar: "مخمل فاخر وباطن من الجلد، نعل يدوي مرن.",
