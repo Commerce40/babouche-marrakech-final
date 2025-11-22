@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ProductCard } from './ProductCard';
+import  ProductCard  from './ProductCard';
 import { PRODUCTS } from '../utils/products';
 
 const containerVariants = {
