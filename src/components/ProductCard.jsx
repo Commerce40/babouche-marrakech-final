@@ -1,8 +1,5 @@
-import ProductCard from './ProductCard';
-
 const ProductCard = ({ product, lang, onAddToCart }) => {
   const handleAdd = () => {
-
     // TRACK AddToCart
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'AddToCart', {
