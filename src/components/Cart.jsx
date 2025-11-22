@@ -1,4 +1,4 @@
-import { useCart } from '../hooks/useCart';
+import { useCart } from '../contexts/CartContext';
 import { PRODUCTS } from '../utils/products';
 
 export const Cart = ({ lang, t, onShowToast }) => {
