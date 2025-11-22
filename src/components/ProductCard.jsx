@@ -1,4 +1,4 @@
-import { PRODUCTS } from '../utils/products';
+import ProductCard from './ProductCard';
 
 const ProductCard = ({ product, lang, onAddToCart }) => {
   const handleAdd = () => {
