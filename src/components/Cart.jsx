@@ -1,5 +1,5 @@
 import { useCart } from '../contexts/CartContext';
-import { PRODUCTS } from '../utils/products';
+import  PRODUCTS  from '../utils/products';
 
 export const Cart = ({ lang, t, onShowToast }) => {
   const { cart, removeFromCart, updateQty, cartTotal, clearCart } = useCart();
