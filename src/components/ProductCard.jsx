@@ -1,3 +1,6 @@
+import React from 'react';
+import { PRODUCTS } from '../utils/products';
+
 const ProductCard = ({ product, lang, onAddToCart }) => {
   const handleAdd = () => {
     // TRACK AddToCart
@@ -13,14 +16,14 @@ const ProductCard = ({ product, lang, onAddToCart }) => {
     }
 
     onAddToCart(product.id, {
-      color: product.colors[0],
-      size: product.sizes[0]
+      color: product.colors?.[0],
+      size: product.sizes?.[0],
     });
   };
 
   return (
     <div className="product-card">
-      <img src={product.images[0]} alt={product.title[lang]} />
+      <img src={product.image || product.images?.[0]} alt={product.title[lang]} />
       <h3>{product.title[lang]}</h3>
       <p>{product.price} XOF</p>
       <button onClick={handleAdd}>Ajouter au panier</button>
