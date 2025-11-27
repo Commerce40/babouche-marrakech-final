@@ -13,8 +13,8 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
 import AboutPage from './pages/AboutPage';
 import SizeGuidePage from './pages/SizeGuidePage';
-import FaqPage from './pages/FaqPage'; // <-- Importer FAQ
-import ReturnPolicyPage from './pages/ReturnPolicyPage'; // <-- Importer Politique de retour
+import FaqPage from './pages/FaqPage';
+import ReturnPolicyPage from './pages/ReturnPolicyPage';
 
 const ProductModal = React.lazy(() =>
   import('./components/ProductModal').then(module => ({ default: module.ProductModal }))
@@ -30,8 +30,22 @@ export default function App() {
   const { addToCart, cartIconRef } = useCart();
   const { playWelcomeSound, backgroundMusicRef, welcomeSoundRef } = useAudio();
   const location = useLocation();
-
   const [flyingImage, setFlyingImage] = useState(null);
+
+  // Initialiser Facebook Pixel
+  useEffect(() => {
+    !(function(f,b,e,v,n,t,s){
+      if(f.fbq) return;
+      n=f.fbq=function(){ n.callMethod? n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+      if(!f._fbq) f._fbq=n;
+      n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
+      t=b.createElement(e); t.async=!0; t.src=v;
+      s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
+    })(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '869346538681877');
+    fbq('track', 'PageView');
+  }, []);
 
   useEffect(() => {
     if (!sessionStorage.getItem('welcomePlayed')) {
@@ -48,7 +62,7 @@ export default function App() {
     setToast({ show: true, message });
     setTimeout(() => setToast({ show: false, message: '' }), 3000);
   };
-  
+
   const handleAddToCartWithAnimation = (product, options, startElementRef) => {
     addToCart(product, options);
     showToast(t('addedToCart'));
@@ -60,7 +74,7 @@ export default function App() {
     if (startElement && cartIconRef.current) {
       const startRect = startElement.getBoundingClientRect();
       const endRect = cartIconRef.current.getBoundingClientRect();
-      
+
       setFlyingImage({
         src: product.image,
         startX: startRect.left + startRect.width / 2,
@@ -73,6 +87,18 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 antialiased">
+
+      {/* Facebook Pixel - noscript */}
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style={{ display: 'none' }}
+          src="https://www.facebook.com/tr?id=869346538681877&ev=PageView&noscript=1"
+          alt=""
+        />
+      </noscript>
+
       <AnimatePresence>
         {flyingImage && (
           <motion.img
@@ -87,35 +113,14 @@ export default function App() {
       </AnimatePresence>
 
       <Header lang={lang} setLang={setLang} t={t} />
-      
+
       <main>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<HomePage t={t} />} />
-            <Route 
-              path="/collection" 
-              element={<CollectionPage 
-                lang={lang} 
-                t={t} 
-                onAddToCart={handleAddToCartWithAnimation} 
-              />} 
-            />
-            <Route 
-              path="/produit/:id" 
-              element={<ProductDetailPage 
-                lang={lang} 
-                t={t} 
-                onAddToCart={handleAddToCartWithAnimation} 
-              />} 
-            />
-            <Route 
-              path="/panier" 
-              element={<CartPage 
-                lang={lang} 
-                t={t} 
-                onShowToast={showToast} 
-              />} 
-            />
+            <Route path="/collection" element={<CollectionPage lang={lang} t={t} onAddToCart={handleAddToCartWithAnimation} />} />
+            <Route path="/produit/:id" element={<ProductDetailPage lang={lang} t={t} onAddToCart={handleAddToCartWithAnimation} />} />
+            <Route path="/panier" element={<CartPage lang={lang} t={t} onShowToast={showToast} />} />
             <Route path="/a-propos" element={<AboutPage t={t} />} />
             <Route path="/guide-des-tailles" element={<SizeGuidePage t={t} />} />
             <Route path="/faq" element={<FaqPage t={t} />} />
@@ -123,9 +128,9 @@ export default function App() {
           </Routes>
         </AnimatePresence>
       </main>
-      
+
       <Footer />
-      
+
       <Suspense fallback={<div />}>
         {selectedProduct && (
           <ProductModal
@@ -137,11 +142,12 @@ export default function App() {
           />
         )}
       </Suspense>
-      
+
       <Toast message={toast.message} show={toast.show} />
 
       <audio ref={backgroundMusicRef} src="/sounds/background-music.mp3" loop />
       <audio ref={welcomeSoundRef} src="/sounds/welcome-voice.mp3" />
+
     </div>
   );
 }
